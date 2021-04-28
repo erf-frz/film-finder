@@ -1,0 +1,35 @@
+<div class="container" *ngIf="film!==undefined">
+  <div class="mat-display-1">{{film.Title}}</div>
+  <mat-dialog-content class="mat-typography">
+    <div class="top-content">
+      <div class="dialop-poster">
+        <img [src]="film.Poster" alt="film.Title">
+      </div>
+      <div class="dialog-basic-info">
+        <h3>Released: {{film.Released}}</h3>
+        <h3>Genre: {{film.Genre}}</h3>
+        <h3>Runtime: {{film.Runtime}}</h3>
+        <h3>Director: {{film.Director}}</h3>
+        <h3>Actors: {{film.Actors}}</h3>
+        <h3>Writer: {{film.Writer}}</h3>
+        <h3>Country: {{film.Country}}</h3>
+        <h3>Language: {{film.Language}}</h3>
+        <h3>Rate: {{film.Rated}}</h3>
+      </div>
+    </div>
+    <div class="bottom-content">
+        <h4>Production: {{film.Production}}</h4>
+        <h4>Awards: {{film.Awards}}</h4>
+        <h4>Box Office: {{film.BoxOffice}}</h4>
+        <h4>Metascore: {{film.Metascore}}</h4>
+        <h4>IMDB Rating: {{film.imdbRating}}({{film.imdbVotes}} votes)</h4>
+        <h4>Plot: {{film.Plot}}</h4>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button color="primary" (click)="saveToLikePage()">Save to Favorites</button>
+  <button mat-flat-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>
+</div>
+

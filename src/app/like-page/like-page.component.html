@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <div class="title" *ngIf="films.length!=0; else noFilm">
+  <h2>Your favorite films:</h2>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let filmItem of films; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{filmItem.Title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>movie</mat-icon>
+        Release Date: {{filmItem.Released}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      <div class="poster">
+        <img [src]="filmItem.Poster" alt="filmItem.Title">
+      </div>
+        <h3>Released: {{filmItem.Released}}</h3>
+        <h3>Genre: {{filmItem.Genre}}</h3>
+        <h3>Runtime: {{filmItem.Runtime}}</h3>
+        <h3>Director: {{filmItem.Director}}</h3>
+        <h3>Actors: {{filmItem.Actors}}</h3>
+        <h3>Writer: {{filmItem.Writer}}</h3>
+        <h3>Country: {{filmItem.Country}}</h3>
+        <h3>Language: {{filmItem.Language}}</h3>
+        <h3>Rate: {{filmItem.Rated}}</h3>
+        <h4>Production: {{filmItem.Production}}</h4>
+        <h4>Awards: {{filmItem.Awards}}</h4>
+        <h4>Box Office: {{filmItem.BoxOffice}}</h4>
+        <h4>Metascore: {{filmItem.Metascore}}</h4>
+        <h4>IMDB Rating: {{filmItem.imdbRating}}({{filmItem.imdbVotes}} votes)</h4>
+        <h4>Plot: {{filmItem.Plot}}</h4>
+        <mat-action-row>
+          <button mat-flat-button color="primary" (click)="RemoveFilm(i)">Remove</button>
+        </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+<ng-template #noFilm>
+   <h2>There is currently no saved film.</h2>
+</ng-template>
+</div>
+

@@ -1,0 +1,47 @@
+
+mat-toolbar{
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position:fixed;
+  z-index: 100;
+  background-color:rgba(100, 128, 255, 0.534);
+
+}
+
+button mat-icon{
+  color:white;
+}
+
+.logo{
+  width:6vw;
+  padding-top: 3vh;
+  margin-left:-2vw;
+}
+
+
+.subheading{
+  margin-left: 10px;
+  margin-top:15px;
+}
+
+mat-sidenav{
+  height:25vh;
+  margin-top:8vh;
+  position: fixed;
+}
+
+.links{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.links:visited{color: black;}
+
+mat-sidenav-content{height: 100vh;}
+
+@media only screen and (max-width:840px){
+  .logo{
+  width:60px;}
+}

@@ -1,0 +1,24 @@
+<div class="wrapper">
+
+  <div class="landing-top">
+    <div class="mat-display-3 title">THAT FILM FINDER</div>
+    <div class="mat-display-1 subtitle">
+        Search for Your Favorite Movies or Series
+    </div>
+  </div>
+
+  <div class="landing-bottom">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <input type="text" class="name-input"
+        #filmName
+        ngModel
+        name="name"
+        required>
+    <button mat-flat-button color="primary"><span>search</span></button>
+    </form>
+
+  </div>
+
+</div>
+
+

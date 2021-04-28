@@ -1,0 +1,31 @@
+.title{
+   padding-top: 12vw;
+   padding-left: 6vw;
+}
+
+.mat-display-1{padding-left: 6vw;}
+
+.form-container{
+  padding-left: 10vw;
+}
+
+mat-form-field:nth-child(2){
+    margin-left: 10vw;
+}
+
+mat-form-field{
+  width:20vw;
+}
+
+.action-btns{
+  margin-left: 18vw;
+  margin-top: 5vh;
+}
+
+.switch{
+  margin-left: 3vw;
+}
+
+mat-spinner{
+  margin-left: 3vw;
+}

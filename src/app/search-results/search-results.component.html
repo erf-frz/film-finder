@@ -1,0 +1,28 @@
+  <div class="search-result">
+    <div class="container" *ngIf="resultExists; else noResult">
+      <div class="mat-display-2 heading">results for the keyword "{{searchName}}"  </div>
+      <div class="cards-container">
+        <mat-card *ngFor="let film of resultsArray">
+          <img mat-card-image [src]="film.Poster" alt="image">
+          <mat-card-title>{{film.Title}}</mat-card-title>
+          <div class="mat-h2">release year: {{film.Year}}</div>
+          <div class="mat-h3">Type: {{film.Type}}</div>
+
+          <mat-card-actions align="center">
+            <button mat-flat-button color="primary" class="action-btn" (click)="showDetailsPage(film.Title)">
+              <span>view full information</span>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+
+<ng-template #noResult>
+  <div class="mat-display-1 heading">
+      No keyword matched your search inquiry. Please try again.
+  </div>
+  <button mat-flat-button color="primary" (click)="backToHomePage()">Go Back</button>
+</ng-template>
+

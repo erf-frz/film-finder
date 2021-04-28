@@ -1,0 +1,51 @@
+<div class="mat-display-3 title">Signup or Login Here</div>
+<div class="mat-display-1">Create an account to save your favorite films.</div>
+
+<div class="form-container">
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+     <mat-form-field appearance="fill">
+       <mat-label>Your Email</mat-label>
+       <input matInput type="text"
+       ngModel
+       name="email"
+       required>
+     </mat-form-field>
+
+     <mat-form-field appearance="fill">
+       <mat-label>Your Password</mat-label>
+       <input matInput [type]="hide? 'password' :'text'"
+       ngModel
+       name="password"
+       required
+       minlength="6">
+       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+       </button>
+     </mat-form-field>
+     <br><br>
+
+    <div class="action-btns">
+      <button type="submit" mat-flat-button color="primary"
+      [disabled]="!authForm.valid"
+      >
+        {{isLoginMode ? 'Login': 'SignUp'}}
+      </button>
+      <button type="button" class="switch" mat-flat-button color="primary"
+        (click)="onSwitchMode()">
+        Switch To {{isLoginMode ? 'SignUp': 'Login'}}
+      </button>
+   </div>
+  </form>
+</div>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="message" *ngIf="message">
+    <!-- <mat-dialog-content>
+      {{message}}
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-flat-button color="primary" mat-dialog-close>Close</button>
+    </mat-dialog-actions> -->
+    {{message}}
+</div>
+
+
